@@ -1,6 +1,11 @@
 /**
  * CHAUDHARY ASSOCIATES — CORE INTERACTION JAVASCRIPT
  */
+function triggerHaptic(duration = 12) {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+        try { navigator.vibrate(duration); } catch (_) {}
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
@@ -147,6 +152,7 @@ function initMobileMenu() {
     if (!mobileBtn || !navLinks) return;
 
     mobileBtn.addEventListener('click', () => {
+        triggerHaptic(15);
         const isOpen = navLinks.classList.toggle('open');
         mobileBtn.classList.toggle('active', isOpen);
         mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -155,6 +161,7 @@ function initMobileMenu() {
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
+            triggerHaptic(8);
             navLinks.classList.remove('open');
             mobileBtn.classList.remove('active');
             mobileBtn.setAttribute('aria-expanded', 'false');
@@ -287,8 +294,17 @@ function initCostCalculator() {
     let currentTierMultiplier = 1.0; // Luxury: 1.0, Ultra-Luxury: 1.45
     let baseRate = 2200; // Base INR per sq.ft
 
-    function updateCalculations() {
+    function updateSliderFill() {
+        if (!areaSlider) return;
+        const min = parseInt(areaSlider.min, 10) || 600;
+        const max = parseInt(areaSlider.max, 10) || 10000;
+        const pct = Math.max(0, Math.min(100, ((currentArea - min) / (max - min)) * 100));
+        areaSlider.style.background = `linear-gradient(to right, var(--color-gold) 0%, var(--color-gold) ${pct}%, rgba(255, 255, 255, 0.15) ${pct}%, rgba(255, 255, 255, 0.15) 100%)`;
+    }
+
+    function updateCalculations(isFromSlider = false) {
         if (areaDisplay) areaDisplay.textContent = `${currentArea.toLocaleString('en-IN')} sq.ft`;
+        updateSliderFill();
         
         const effectiveRate = Math.round(baseRate * currentTypeMultiplier * currentTierMultiplier);
         const totalCost = currentArea * effectiveRate;
@@ -297,13 +313,20 @@ function initCostCalculator() {
         if (timelineMonths > 18) timelineMonths = 18;
 
         if (sqftDisplay) sqftDisplay.textContent = `₹${effectiveRate.toLocaleString('en-IN')} / sq.ft`;
-        if (priceDisplay) priceDisplay.textContent = `₹${(totalCost / 100000).toFixed(2)} Lakhs`;
+        if (priceDisplay) {
+            priceDisplay.textContent = `₹${(totalCost / 100000).toFixed(2)} Lakhs`;
+            if (!isFromSlider) {
+                priceDisplay.classList.remove('calc-price-bump');
+                void priceDisplay.offsetWidth; // force reflow for smooth re-animation
+                priceDisplay.classList.add('calc-price-bump');
+            }
+        }
         if (timelineDisplay) timelineDisplay.textContent = `${timelineMonths} - ${timelineMonths + 2} Months`;
     }
 
     areaSlider.addEventListener('input', (e) => {
         currentArea = parseInt(e.target.value, 10);
-        updateCalculations();
+        updateCalculations(true);
     });
 
     typeButtons.forEach(btn => {
@@ -311,7 +334,8 @@ function initCostCalculator() {
             typeButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentTypeMultiplier = parseFloat(btn.getAttribute('data-multiplier')) || 1.0;
-            updateCalculations();
+            triggerHaptic(10);
+            updateCalculations(false);
         });
     });
 
@@ -320,7 +344,8 @@ function initCostCalculator() {
             tierButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentTierMultiplier = parseFloat(btn.getAttribute('data-multiplier')) || 1.0;
-            updateCalculations();
+            triggerHaptic(10);
+            updateCalculations(false);
         });
     });
 
@@ -378,6 +403,31 @@ function openProjectMonograph(data) {
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Touch swipe navigation for monograph modal on mobile
+    const mainImg = document.getElementById('modalProjectImg');
+    if (mainImg && !mainImg.dataset.hasSwipe) {
+        mainImg.dataset.hasSwipe = 'true';
+        let monoStartX = 0;
+        let monoStartY = 0;
+        mainImg.addEventListener('touchstart', (e) => {
+            monoStartX = e.touches[0].clientX;
+            monoStartY = e.touches[0].clientY;
+        }, { passive: true });
+        mainImg.addEventListener('touchend', (e) => {
+            const diffX = monoStartX - e.changedTouches[0].clientX;
+            const diffY = monoStartY - e.changedTouches[0].clientY;
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40 && monographGallery.length > 1) {
+                triggerHaptic(10);
+                if (diffX > 0) {
+                    monographGalleryIndex = (monographGalleryIndex + 1) % monographGallery.length;
+                } else {
+                    monographGalleryIndex = (monographGalleryIndex - 1 + monographGallery.length) % monographGallery.length;
+                }
+                renderMonographGallery();
+            }
+        }, { passive: true });
+    }
 }
 
 function renderMonographGallery() {
@@ -717,6 +767,7 @@ function initRoomWallStudio() {
             const roomKey = btn.getAttribute('data-room');
             if (roomKey === currentRoom) return;
 
+            triggerHaptic(12);
             roomBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentRoom = roomKey;
@@ -731,6 +782,7 @@ function initRoomWallStudio() {
             const colorKey = chip.getAttribute('data-color');
             if (colorKey === currentColor) return;
 
+            triggerHaptic(10);
             colorChips.forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
             currentColor = colorKey;
@@ -971,24 +1023,26 @@ function initInquiryForm() {
 }
 
 /* ==========================================================================
-   10. SCROLL ANIMATIONS / REVEALS
+   10. SCROLL ANIMATIONS / REVEALS (HIGH EFFICIENCY FOR MOBILE)
    ========================================================================== */
 function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
+                // Unobserve after entrance to save CPU/GPU cycles on mobile
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-    document.querySelectorAll('.pillar-card, .project-item, .insta-card, .founder-card').forEach(el => {
+    document.querySelectorAll('.pillar-card, .project-item, .insta-card, .founder-card, .room-card-btn, .calc-step, .metric-block, .process-card, .testimonial-card').forEach(el => {
         observer.observe(el);
     });
 }
 
 /* ==========================================================================
-   11. CINEMATIC HERO CAROUSEL & PROJECT HUD
+   11. CINEMATIC HERO CAROUSEL & PROJECT HUD (WITH TOUCH SWIPE)
    ========================================================================== */
 function initHeroCarousel() {
     const slides = document.querySelectorAll('.hero-slide');
@@ -1054,6 +1108,7 @@ function initHeroCarousel() {
 
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
+            triggerHaptic(10);
             goToSlide(currentSlide - 1);
             startAutoSlide();
         });
@@ -1061,16 +1116,47 @@ function initHeroCarousel() {
 
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
+            triggerHaptic(10);
             goToSlide(currentSlide + 1);
             startAutoSlide();
         });
+    }
+
+    // Mobile Touch Swipe Navigation for Hero
+    const heroSection = document.querySelector('.hero-section') || document.querySelector('.hero-carousel');
+    if (heroSection) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        heroSection.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        heroSection.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+
+            // Only trigger horizontal swipe if horizontal movement is greater than vertical (avoid scroll conflict)
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
+                triggerHaptic(12);
+                if (diffX > 0) {
+                    goToSlide(currentSlide + 1);
+                } else {
+                    goToSlide(currentSlide - 1);
+                }
+                startAutoSlide();
+            }
+        }, { passive: true });
     }
 
     startAutoSlide();
 }
 
 /* ==========================================================================
-   12. INSTAGRAM STORY HIGHLIGHTS LIGHTBOX VIEWER
+   12. INSTAGRAM STORY HIGHLIGHTS LIGHTBOX VIEWER (TOUCH GESTURES & SWIPE DOWN)
    ========================================================================== */
 function initStoryHighlights() {
     const storyButtons = document.querySelectorAll('.story-circle-item');
@@ -1147,12 +1233,16 @@ function initStoryHighlights() {
 
     storyButtons.forEach((btn, idx) => {
         btn.addEventListener('click', () => {
+            triggerHaptic(10);
             openStory(idx);
         });
     });
 
     if (closeBtn) {
-        closeBtn.addEventListener('click', closeStory);
+        closeBtn.addEventListener('click', () => {
+            triggerHaptic(8);
+            closeStory();
+        });
     }
 
     modal.addEventListener('click', (e) => {
@@ -1166,5 +1256,44 @@ function initStoryHighlights() {
             closeStory();
         }
     });
+
+    // Mobile Touch Gestures: Swipe down to dismiss, Swipe left/right to navigate
+    let storyStartX = 0;
+    let storyStartY = 0;
+
+    modal.addEventListener('touchstart', (e) => {
+        storyStartX = e.touches[0].clientX;
+        storyStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const diffX = storyStartX - endX;
+        const diffY = endY - storyStartY; // positive when swiping downward
+
+        // Swipe down to dismiss
+        if (diffY > 75 && Math.abs(diffY) > Math.abs(diffX)) {
+            triggerHaptic(12);
+            closeStory();
+            return;
+        }
+
+        // Swipe left -> next story
+        if (diffX > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+            triggerHaptic(10);
+            if (currentIndex + 1 < storyButtons.length) {
+                openStory(currentIndex + 1);
+            } else {
+                closeStory();
+            }
+        } else if (diffX < -45 && Math.abs(diffX) > Math.abs(diffY)) {
+            // Swipe right -> prev story
+            triggerHaptic(10);
+            if (currentIndex > 0) {
+                openStory(currentIndex - 1);
+            }
+        }
+    }, { passive: true });
 }
 

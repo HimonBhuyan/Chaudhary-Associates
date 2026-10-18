@@ -5203,4 +5203,145 @@ h1, h2, h3, h4, .font-heading {
     }
 }
 
+/* ==========================================================================
+   SILKY SMOOTH MOBILE ANIMATIONS & MICRO-INTERACTIONS
+   Hardware-accelerated transitions, haptic press states, and fluid motion
+   ========================================================================== */
+
+/* 1. Global Touch Polish */
+* {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 2. Touch Press Micro-Feedback (Active States) */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .calc-option-btn,
+    .room-card-btn,
+    .wall-swatch-chip,
+    .story-circle-item,
+    .filter-btn,
+    .floating-action-btn,
+    .nav-link {
+        transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease !important;
+    }
+
+    .btn:active,
+    .calc-option-btn:active,
+    .room-card-btn:active,
+    .wall-swatch-chip:active,
+    .filter-btn:active,
+    .floating-action-btn:active {
+        transform: scale(0.96) !important;
+    }
+
+    .story-circle-item:active .story-ring {
+        transform: scale(0.92) !important;
+    }
+}
+
+/* 3. Staggered Mobile Navigation Drawer Animation */
+@media (max-width: 992px) {
+    .nav-links.open li {
+        animation: mobileNavSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .nav-links.open li:nth-child(1) { animation-delay: 0.04s; }
+    .nav-links.open li:nth-child(2) { animation-delay: 0.08s; }
+    .nav-links.open li:nth-child(3) { animation-delay: 0.12s; }
+    .nav-links.open li:nth-child(4) { animation-delay: 0.16s; }
+    .nav-links.open li:nth-child(5) { animation-delay: 0.20s; }
+    .nav-links.open li:nth-child(6) { animation-delay: 0.24s; }
+    .nav-links.open li:nth-child(7) { animation-delay: 0.28s; }
+    .nav-links.open li:nth-child(8) { animation-delay: 0.32s; }
+    .nav-links.open li:nth-child(9) { animation-delay: 0.36s; }
+
+    @keyframes mobileNavSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+/* 4. Scroll-Driven Intersection Reveal Animations */
+.pillar-card, 
+.project-item, 
+.insta-card, 
+.founder-card,
+.room-card-btn,
+.calc-step,
+.metric-block {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: opacity, transform;
+}
+
+.pillar-card.in-view, 
+.project-item.in-view, 
+.insta-card.in-view, 
+.founder-card.in-view,
+.room-card-btn.in-view,
+.calc-step.in-view,
+.metric-block.in-view {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 5. Smooth Within Walls Visualizer Transitions */
+.vis-stage-img {
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: opacity, transform;
+}
+
+.wall-swatch-chip.active {
+    animation: swatchSelectPulse 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes swatchSelectPulse {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
+/* 6. Calculator Cost Estimate Animated Pulse */
+.calc-price-bump {
+    animation: calcPriceBump 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes calcPriceBump {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); color: var(--color-gold-hover); }
+    100% { transform: scale(1); }
+}
+
+/* 7. Comparison Slider Touch Pan optimization */
+.comparison-wrapper,
+.comparison-slider-handle {
+    touch-action: pan-y !important;
+}
+
+/* 8. Floating Actions Entrance on Mobile */
+@media (max-width: 768px) {
+    .floating-actions-dock {
+        animation: floatDockEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    @keyframes floatDockEntrance {
+        from {
+            opacity: 0;
+            transform: translateY(24px) scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+
 
