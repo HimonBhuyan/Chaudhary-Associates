@@ -258,23 +258,31 @@
                     <span class="pillar-step">Stage 01</span>
                     <h3 class="pillar-title">Design</h3>
                     <p class="pillar-quote">"Design is where ideas take shape."</p>
-                    <p class="pillar-desc">
-                        Our expert architects and engineers blend boundless creativity with pragmatic functionality. We tailor each blueprint to your unique lifestyle while respecting site orientation, solar paths, and sustainability.
-                    </p>
-                    <ul class="pillar-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Architectural Concept Sketches & Master Planning</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>High-Resolution 3D Photorealistic Visualizations</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Detailed Working & Structural Engineering Drawings</span>
-                        </li>
-                    </ul>
+                    <button type="button" class="pillar-toggle-btn mobile-pillar-toggle" aria-expanded="false">
+                        <span class="toggle-text">Explore Stage Details</span>
+                        <span class="toggle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="pillar-collapsible-content">
+                        <p class="pillar-desc">
+                            Our expert architects and engineers blend boundless creativity with pragmatic functionality. We tailor each blueprint to your unique lifestyle while respecting site orientation, solar paths, and sustainability.
+                        </p>
+                        <ul class="pillar-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Architectural Concept Sketches & Master Planning</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>High-Resolution 3D Photorealistic Visualizations</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Detailed Working & Structural Engineering Drawings</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -291,23 +299,31 @@
                     <span class="pillar-step">Stage 02</span>
                     <h3 class="pillar-title">Build</h3>
                     <p class="pillar-quote">"Where the magic happens."</p>
-                    <p class="pillar-desc">
-                        Bringing designs to life with unmatched precision and craftsmanship. We maintain the highest benchmarks of structural safety, sourcing premium materials and managing on-site contractors with military discipline.
-                    </p>
-                    <ul class="pillar-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Flawless Civil Execution & Structural Integrity</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Rigorous Multi-Tier Quality Assurance Audits</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Seamless Project Management On-Time & Budget</span>
-                        </li>
-                    </ul>
+                    <button type="button" class="pillar-toggle-btn mobile-pillar-toggle" aria-expanded="false">
+                        <span class="toggle-text">Explore Stage Details</span>
+                        <span class="toggle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="pillar-collapsible-content">
+                        <p class="pillar-desc">
+                            Bringing designs to life with unmatched precision and craftsmanship. We maintain the highest benchmarks of structural safety, sourcing premium materials and managing on-site contractors with military discipline.
+                        </p>
+                        <ul class="pillar-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Flawless Civil Execution & Structural Integrity</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Rigorous Multi-Tier Quality Assurance Audits</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Seamless Project Management On-Time & Budget</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -324,23 +340,31 @@
                     <span class="pillar-step">Stage 03</span>
                     <h3 class="pillar-title">Deliver</h3>
                     <p class="pillar-quote">"We make it real."</p>
-                    <p class="pillar-desc">
-                        Our commitment doesn't stop at construction—it extends to handing over a flawless, ready-to-inhabit sanctuary. From snag-free inspections to smart home commissioning, every detail is verified for lasting perfection.
-                    </p>
-                    <ul class="pillar-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Comprehensive Snag-Free Final Client Inspection</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Turnkey Key Handover Ready for Immediate Living</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Post-Handover Warranty & Extended Care Support</span>
-                        </li>
-                    </ul>
+                    <button type="button" class="pillar-toggle-btn mobile-pillar-toggle" aria-expanded="false">
+                        <span class="toggle-text">Explore Stage Details</span>
+                        <span class="toggle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="pillar-collapsible-content">
+                        <p class="pillar-desc">
+                            Our commitment doesn't stop at construction—it extends to handing over a flawless, ready-to-inhabit sanctuary. From snag-free inspections to smart home commissioning, every detail is verified for lasting perfection.
+                        </p>
+                        <ul class="pillar-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Comprehensive Snag-Free Final Client Inspection</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Turnkey Key Handover Ready for Immediate Living</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Post-Handover Warranty & Extended Care Support</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -837,26 +861,29 @@
             <!-- Visualizer Stage Frame -->
             <div class="wall-visualizer-stage-frame">
                 <div class="wall-visualizer-canvas" id="wallVisualizerCanvas">
-                    <!-- Primary Render Image -->
-                    <img id="visPrimaryImg" class="vis-stage-img vis-active" src="assets/img/within_walls/bedroom_alabaster.jpg" alt="Within Walls Color Visualizer">
-                    
-                    <!-- Floating Room Status Badge (Top-Left) -->
-                    <div class="vis-floating-badge vis-badge-left">
-                        <span class="vis-badge-icon">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-                        </span>
-                        <div class="vis-badge-content">
-                            <span class="vis-badge-sub">Selected Space</span>
-                            <strong id="visActiveRoomLabel">Master Bedroom Sanctuary</strong>
+                    <!-- Dedicated Visual Stage Viewport -->
+                    <div class="wall-visualizer-viewport">
+                        <!-- Primary Render Image -->
+                        <img id="visPrimaryImg" class="vis-stage-img vis-active" src="assets/img/within_walls/bedroom_alabaster.jpg" alt="Within Walls Color Visualizer">
+                        
+                        <!-- Floating Room Status Badge (Top-Left) -->
+                        <div class="vis-floating-badge vis-badge-left">
+                            <span class="vis-badge-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                            </span>
+                            <div class="vis-badge-content">
+                                <span class="vis-badge-sub">Selected Space</span>
+                                <strong id="visActiveRoomLabel">Master Bedroom Sanctuary</strong>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Floating Color Spec Badge (Top-Right) -->
-                    <div class="vis-floating-badge vis-badge-right">
-                        <span class="vis-color-pip" id="visActiveColorDot" style="background-color: #F4EFE6;"></span>
-                        <div class="vis-badge-content">
-                            <span class="vis-badge-sub" id="visActiveFinishLabel">Roman Limewash</span>
-                            <strong id="visActiveColorName">Parisian Alabaster (#F4EFE6)</strong>
+                        <!-- Floating Color Spec Badge (Top-Right) -->
+                        <div class="vis-floating-badge vis-badge-right">
+                            <span class="vis-color-pip" id="visActiveColorDot" style="background-color: #F4EFE6;"></span>
+                            <div class="vis-badge-content">
+                                <span class="vis-badge-sub" id="visActiveFinishLabel">Roman Limewash</span>
+                                <strong id="visActiveColorName">Parisian Alabaster (#F4EFE6)</strong>
+                            </div>
                         </div>
                     </div>
 

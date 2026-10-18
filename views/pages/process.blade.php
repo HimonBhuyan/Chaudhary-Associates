@@ -32,23 +32,31 @@
                     <span class="pillar-step">Stage 01</span>
                     <h3 class="pillar-title">Design</h3>
                     <p class="pillar-quote">"Design is where ideas take shape."</p>
-                    <p class="pillar-desc">
-                        Our expert architects and engineers blend boundless creativity with pragmatic functionality. We tailor each blueprint to your unique lifestyle while respecting site orientation, solar paths, and sustainability.
-                    </p>
-                    <ul class="pillar-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Architectural Concept Sketches & Master Planning</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>High-Resolution 3D Photorealistic Visualizations</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Detailed Working & Structural Engineering Drawings</span>
-                        </li>
-                    </ul>
+                    <button type="button" class="pillar-toggle-btn mobile-pillar-toggle" aria-expanded="false">
+                        <span class="toggle-text">Explore Stage Details</span>
+                        <span class="toggle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="pillar-collapsible-content">
+                        <p class="pillar-desc">
+                            Our expert architects and engineers blend boundless creativity with pragmatic functionality. We tailor each blueprint to your unique lifestyle while respecting site orientation, solar paths, and sustainability.
+                        </p>
+                        <ul class="pillar-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Architectural Concept Sketches & Master Planning</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>High-Resolution 3D Photorealistic Visualizations</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Detailed Working & Structural Engineering Drawings</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -65,23 +73,31 @@
                     <span class="pillar-step">Stage 02</span>
                     <h3 class="pillar-title">Build</h3>
                     <p class="pillar-quote">"Where the magic happens."</p>
-                    <p class="pillar-desc">
-                        Bringing designs to life with unmatched precision and craftsmanship. We maintain the highest benchmarks of structural safety, sourcing premium materials and managing on-site contractors with military discipline.
-                    </p>
-                    <ul class="pillar-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Flawless Civil Execution & Structural Integrity</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Rigorous Multi-Tier Quality Assurance Audits</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Seamless Project Management On-Time & Budget</span>
-                        </li>
-                    </ul>
+                    <button type="button" class="pillar-toggle-btn mobile-pillar-toggle" aria-expanded="false">
+                        <span class="toggle-text">Explore Stage Details</span>
+                        <span class="toggle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="pillar-collapsible-content">
+                        <p class="pillar-desc">
+                            Bringing designs to life with unmatched precision and craftsmanship. We maintain the highest benchmarks of structural safety, sourcing premium materials and managing on-site contractors with military discipline.
+                        </p>
+                        <ul class="pillar-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Flawless Civil Execution & Structural Integrity</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Rigorous Multi-Tier Quality Assurance Audits</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Seamless Project Management On-Time & Budget</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -98,23 +114,31 @@
                     <span class="pillar-step">Stage 03</span>
                     <h3 class="pillar-title">Deliver</h3>
                     <p class="pillar-quote">"We make it real."</p>
-                    <p class="pillar-desc">
-                        Our commitment doesn't stop at construction—it extends to handing over a flawless, ready-to-inhabit sanctuary. From snag-free inspections to smart home commissioning, every detail is verified for lasting perfection.
-                    </p>
-                    <ul class="pillar-features">
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Comprehensive Snag-Free Final Client Inspection</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Turnkey Key Handover Ready for Immediate Living</span>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span>Post-Handover Warranty & Extended Care Support</span>
-                        </li>
-                    </ul>
+                    <button type="button" class="pillar-toggle-btn mobile-pillar-toggle" aria-expanded="false">
+                        <span class="toggle-text">Explore Stage Details</span>
+                        <span class="toggle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="pillar-collapsible-content">
+                        <p class="pillar-desc">
+                            Our commitment doesn't stop at construction—it extends to handing over a flawless, ready-to-inhabit sanctuary. From snag-free inspections to smart home commissioning, every detail is verified for lasting perfection.
+                        </p>
+                        <ul class="pillar-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Comprehensive Snag-Free Final Client Inspection</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Turnkey Key Handover Ready for Immediate Living</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Post-Handover Warranty & Extended Care Support</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

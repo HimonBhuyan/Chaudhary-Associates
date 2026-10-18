@@ -25,7 +25,7 @@
     </script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css?v=3.1">
+    <link rel="stylesheet" href="assets/css/style.css?v=3.2">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/img/logo_square.png">
@@ -50,7 +50,7 @@
     @include('components.floating_actions')
 
     <!-- Core Scripts -->
-    <script src="assets/js/main.js?v=3.1"></script>
+    <script src="assets/js/main.js?v=3.2"></script>
     @yield('scripts')
 </body>
 </html>

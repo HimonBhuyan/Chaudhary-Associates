@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
     initThemeToggle();
     initMobileMenu();
+    initPillarAccordions();
     initHeroCarousel();
     initStoryHighlights();
     initBlueprintSlider();
@@ -166,6 +167,43 @@ function initMobileMenu() {
             mobileBtn.classList.remove('active');
             mobileBtn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
+        });
+    });
+}
+
+/* ==========================================================================
+   3b. MOBILE PILLAR ACCORDION DROPDOWN (ONLY FOR MOBILE MODE)
+   ========================================================================== */
+function initPillarAccordions() {
+    const toggleBtns = document.querySelectorAll('.mobile-pillar-toggle');
+    if (!toggleBtns.length) return;
+
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            triggerHaptic(10);
+
+            const cardBody = btn.closest('.pillar-body');
+            if (!cardBody) return;
+
+            const content = cardBody.querySelector('.pillar-collapsible-content');
+            if (!content) return;
+
+            const isCurrentlyOpen = btn.classList.contains('active');
+
+            if (isCurrentlyOpen) {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+                content.classList.remove('is-open');
+                const textSpan = btn.querySelector('.toggle-text');
+                if (textSpan) textSpan.textContent = 'Explore Stage Details';
+            } else {
+                btn.classList.add('active');
+                btn.setAttribute('aria-expanded', 'true');
+                content.classList.add('is-open');
+                const textSpan = btn.querySelector('.toggle-text');
+                if (textSpan) textSpan.textContent = 'Hide Stage Details';
+            }
         });
     });
 }

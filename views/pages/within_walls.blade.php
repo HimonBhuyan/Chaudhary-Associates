@@ -125,26 +125,29 @@
             <!-- Visualizer Stage Frame -->
             <div class="wall-visualizer-stage-frame">
                 <div class="wall-visualizer-canvas" id="wallVisualizerCanvas">
-                    <!-- Primary Render Image -->
-                    <img id="visPrimaryImg" class="vis-stage-img vis-active" src="assets/img/within_walls/bedroom_alabaster.jpg" alt="Within Walls Color Visualizer">
-                    
-                    <!-- Floating Room Status Badge (Top-Left) -->
-                    <div class="vis-floating-badge vis-badge-left">
-                        <span class="vis-badge-icon">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-                        </span>
-                        <div class="vis-badge-content">
-                            <span class="vis-badge-sub">Selected Space</span>
-                            <strong id="visActiveRoomLabel">Master Bedroom Sanctuary</strong>
+                    <!-- Dedicated Visual Stage Viewport -->
+                    <div class="wall-visualizer-viewport">
+                        <!-- Primary Render Image -->
+                        <img id="visPrimaryImg" class="vis-stage-img vis-active" src="assets/img/within_walls/bedroom_alabaster.jpg" alt="Within Walls Color Visualizer">
+                        
+                        <!-- Floating Room Status Badge (Top-Left) -->
+                        <div class="vis-floating-badge vis-badge-left">
+                            <span class="vis-badge-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                            </span>
+                            <div class="vis-badge-content">
+                                <span class="vis-badge-sub">Selected Space</span>
+                                <strong id="visActiveRoomLabel">Master Bedroom Sanctuary</strong>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Floating Color Spec Badge (Top-Right) -->
-                    <div class="vis-floating-badge vis-badge-right">
-                        <span class="vis-color-pip" id="visActiveColorDot" style="background-color: #F4EFE6;"></span>
-                        <div class="vis-badge-content">
-                            <span class="vis-badge-sub" id="visActiveFinishLabel">Roman Limewash</span>
-                            <strong id="visActiveColorName">Parisian Alabaster (#F4EFE6)</strong>
+                        <!-- Floating Color Spec Badge (Top-Right) -->
+                        <div class="vis-floating-badge vis-badge-right">
+                            <span class="vis-color-pip" id="visActiveColorDot" style="background-color: #F4EFE6;"></span>
+                            <div class="vis-badge-content">
+                                <span class="vis-badge-sub" id="visActiveFinishLabel">Roman Limewash</span>
+                                <strong id="visActiveColorName">Parisian Alabaster (#F4EFE6)</strong>
+                            </div>
                         </div>
                     </div>
 

@@ -1333,6 +1333,15 @@ h1, h2, h3, h4, .font-heading {
     flex-shrink: 0;
 }
 
+/* Base Desktop Settings for Pillar Dropdown & Details */
+.mobile-pillar-toggle {
+    display: none !important;
+}
+
+.pillar-collapsible-content {
+    display: block !important;
+}
+
 /* ==========================================================================
    INTERACTIVE BLUEPRINT TO REALITY SLIDER
    ========================================================================== */
@@ -2813,6 +2822,14 @@ h1, h2, h3, h4, .font-heading {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+}
+
+.wall-visualizer-viewport {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -4654,6 +4671,27 @@ h1, h2, h3, h4, .font-heading {
     color: #7A818E !important;
 }
 
+/* 17b. Light Theme Within Walls & Pillar Toggle */
+[data-theme="light"] .mobile-pillar-toggle {
+    background: rgba(150, 116, 64, 0.08) !important;
+    border-color: rgba(150, 116, 64, 0.25) !important;
+    color: #8C6D3B !important;
+}
+
+[data-theme="light"] .vis-stage-telemetry-bar {
+    background: #FFFFFF !important;
+    border-top: 1px solid rgba(30, 25, 20, 0.1) !important;
+}
+
+[data-theme="light"] .vis-floating-badge {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(30, 25, 20, 0.12) !important;
+}
+
+[data-theme="light"] .vis-floating-badge strong {
+    color: #111317 !important;
+}
+
 /* 18. Global Fallback for Light Theme Contrast Protection */
 [data-theme="light"] .section-title,
 [data-theme="light"] h1:not(.hero-masthead-title),
@@ -4934,6 +4972,85 @@ h1, h2, h3, h4, .font-heading {
         line-height: 1.3 !important;
     }
 
+    /* 4b. Pillars Section & Mobile-Only Dropdown Below Quotes */
+    .pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    .pillar-card {
+        border-radius: var(--radius-md) !important;
+    }
+    .pillar-body {
+        padding: 1.5rem 1.25rem !important;
+    }
+    .pillar-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .pillar-quote {
+        font-size: 1.05rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    .mobile-pillar-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        margin: 0.35rem 0 0;
+        background: rgba(197, 168, 128, 0.08);
+        border: 1px solid rgba(197, 168, 128, 0.28);
+        border-radius: var(--radius-sm);
+        color: var(--color-gold);
+        font-family: var(--font-body);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-pillar-toggle:active {
+        transform: scale(0.98);
+        background: rgba(197, 168, 128, 0.16);
+    }
+    .mobile-pillar-toggle .toggle-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-pillar-toggle.active .toggle-icon {
+        transform: rotate(180deg);
+    }
+    .pillar-collapsible-content {
+        display: block !important;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin 0.3s ease;
+        margin-top: 0;
+    }
+    .pillar-collapsible-content.is-open {
+        max-height: 900px;
+        opacity: 1;
+        margin-top: 1rem;
+    }
+    .pillar-desc {
+        font-size: 0.88rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 1.15rem !important;
+    }
+    .pillar-features {
+        padding-top: 1.15rem !important;
+        gap: 0.65rem !important;
+    }
+    .pillar-features li {
+        font-size: 0.82rem !important;
+        line-height: 1.35 !important;
+    }
+
     /* 5. "Within Walls" Interactive Studio */
     .wall-color-studio-container {
         gap: 1.5rem !important;
@@ -4992,34 +5109,116 @@ h1, h2, h3, h4, .font-heading {
     .chip-hex {
         display: none !important;
     }
+
+    /* Resultant Photo Display - Fully Visible & Crystal Clear on Mobile */
+    .wall-visualizer-stage-frame {
+        border-radius: var(--radius-md) !important;
+        overflow: hidden !important;
+    }
     .wall-visualizer-canvas {
-        min-height: 330px !important;
-        height: 330px !important;
+        min-height: auto !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+    }
+    .wall-visualizer-viewport {
+        position: relative !important;
+        width: 100% !important;
+        height: 350px !important;
+        min-height: 350px !important;
+        overflow: hidden !important;
+        background: #080B0E !important;
+    }
+    .wall-visualizer-viewport .vis-stage-img {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
     }
     .vis-floating-badge {
-        padding: 0.4rem 0.8rem !important;
+        position: absolute !important;
+        padding: 0.35rem 0.65rem !important;
         gap: 0.45rem !important;
+        max-width: 48% !important;
+        box-sizing: border-box !important;
+        border-radius: 999px !important;
+        background: rgba(15, 18, 22, 0.85) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        z-index: 5 !important;
     }
     .vis-badge-left {
-        top: 0.75rem !important;
-        left: 0.75rem !important;
+        top: 0.65rem !important;
+        left: 0.65rem !important;
         right: auto !important;
+        bottom: auto !important;
     }
     .vis-badge-right {
-        top: auto !important;
-        bottom: 0.75rem !important;
-        right: 0.75rem !important;
+        top: 0.65rem !important;
+        right: 0.65rem !important;
         left: auto !important;
+        bottom: auto !important;
     }
     .vis-floating-badge strong {
-        font-size: 0.74rem !important;
+        font-size: 0.68rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 100% !important;
     }
     .vis-floating-badge .vis-badge-sub {
-        font-size: 0.62rem !important;
+        font-size: 0.56rem !important;
+    }
+    .vis-badge-icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .vis-badge-icon svg {
+        width: 11px !important;
+        height: 11px !important;
     }
     .vis-color-pip {
         width: 14px !important;
         height: 14px !important;
+    }
+    .vis-stage-telemetry-bar {
+        position: relative !important;
+        margin-top: 0 !important;
+        padding: 1.35rem 1.15rem !important;
+        background: var(--color-surface) !important;
+        border-top: 1px solid var(--color-border) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+        backdrop-filter: none !important;
+    }
+    .telemetry-desc-block {
+        margin-bottom: 0.85rem !important;
+    }
+    .telemetry-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+    .telemetry-stats-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.75rem 0.65rem !important;
+    }
+    .telemetry-stat .stat-lbl {
+        font-size: 0.62rem !important;
+    }
+    .telemetry-stat .stat-val {
+        font-size: 0.82rem !important;
+    }
+    .telemetry-actions {
+        width: 100% !important;
+    }
+    .telemetry-actions .btn {
+        width: 100% !important;
+        justify-content: center !important;
     }
 
     /* 6. Turnkey Cost & Estimator Calculator */
@@ -5200,6 +5399,17 @@ h1, h2, h3, h4, .font-heading {
     }
     .wall-swatches-bar {
         grid-template-columns: 1fr !important;
+    }
+    .wall-visualizer-viewport {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+    .vis-floating-badge {
+        padding: 0.28rem 0.5rem !important;
+        gap: 0.35rem !important;
+    }
+    .vis-floating-badge strong {
+        font-size: 0.62rem !important;
     }
 }
 
