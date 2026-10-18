@@ -15,7 +15,7 @@
                 <input type="text" id="clientName" name="name" class="form-control" placeholder="e.g. Vikram Malhotra" required>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+            <div class="form-row-2col">
                 <div class="form-group">
                     <label class="form-label" for="clientPhone">Phone / WhatsApp *</label>
                     <input type="tel" id="clientPhone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem;">
+            <div class="form-row-2col">
                 <div class="form-group">
                     <label class="form-label" for="projectType">Project Typology *</label>
                     <select id="projectType" name="project_type" class="form-control">

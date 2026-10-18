@@ -18,7 +18,7 @@
 <!-- Contact Details & Form -->
 <section style="padding: 6rem 0;">
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem;">
+        <div class="contact-page-grid">
             <!-- Studio Information -->
             <div>
                 <span class="eyebrow">Studio Coordinates</span>
@@ -64,7 +64,7 @@
             </div>
 
             <!-- In-Page Consultation Form -->
-            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-md);">
+            <div class="contact-form-card">
                 <span class="eyebrow">Project Inquiry</span>
                 <h3 class="section-title" style="font-size: 2rem; margin-bottom: 0.75rem;">Discuss Your Vision</h3>
                 <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">
@@ -77,7 +77,7 @@
                         <input type="text" id="contactName" name="name" class="form-control" placeholder="e.g. Vikram Malhotra" required>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                    <div class="form-row-2col">
                         <div class="form-group">
                             <label class="form-label" for="contactPhone">Phone / WhatsApp *</label>
                             <input type="tel" id="contactPhone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem;">
+                    <div class="form-row-2col">
                         <div class="form-group">
                             <label class="form-label" for="contactType">Project Typology *</label>
                             <select id="contactType" name="project_type" class="form-control">

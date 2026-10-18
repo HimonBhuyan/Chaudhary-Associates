@@ -61,7 +61,7 @@
                     <div class="calc-step-label">
                         <span>03. Material & Finish Specification</span>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="calc-tiers-grid">
                         <button class="calc-option-btn calc-tier-btn active" data-multiplier="1.0" style="padding: 1.25rem;">
                             <span style="font-weight: 600; font-size: 0.95rem;">Signature Luxury</span>
                             <span style="font-size: 0.75rem; color: var(--color-text-muted);">Imported Italian marble, veneer, branded hardware, premium automation.</span>

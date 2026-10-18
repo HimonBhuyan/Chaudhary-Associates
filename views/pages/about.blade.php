@@ -18,7 +18,7 @@
 <!-- Studio Story -->
 <section style="padding: 6rem 0;">
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
+        <div class="about-hero-grid">
             <div>
                 <span class="eyebrow">Our Ethos</span>
                 <h2 class="section-title" style="font-size: 2.4rem;">Where Ideas Take Shape & Excellence is Delivered</h2>

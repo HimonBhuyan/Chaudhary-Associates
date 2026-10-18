@@ -20,7 +20,7 @@
     <div class="container">
         <div style="display: flex; flex-direction: column; gap: 4.5rem;">
             @foreach($services as $index => $srv)
-            <div style="display: grid; grid-template-columns: {{ $index % 2 === 0 ? '1.2fr 1fr' : '1fr 1.2fr' }}; gap: 3.5rem; align-items: center; padding-bottom: 4.5rem; border-bottom: 1px solid var(--color-border);">
+            <div class="service-row-grid {{ $index % 2 === 1 ? 'service-row-reverse' : '' }}">
                 @if($index % 2 === 0)
                 <div>
                     <span class="eyebrow">Practice Area 0{{ $index + 1 }}</span>
