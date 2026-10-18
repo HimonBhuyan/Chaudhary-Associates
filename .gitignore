@@ -1,0 +1,12 @@
+# Blade Cache (compiled views)
+cache/*.bladec
+!cache/.gitkeep
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & Environment
+*.log
+.env
