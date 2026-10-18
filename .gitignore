@@ -11,3 +11,6 @@ desktop.ini
 *.log
 .env
 inquiries.json
+
+# Composer Vendor Directory
+vendor/
