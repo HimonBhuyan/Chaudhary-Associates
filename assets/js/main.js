@@ -935,29 +935,38 @@ function initInquiryForm() {
     const form = document.getElementById('consultationForm');
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = `<span>Booking Appointment...</span>`;
         submitBtn.disabled = true;
 
-        setTimeout(() => {
-            submitBtn.innerHTML = `<span>✓ Consultation Requested!</span>`;
-            submitBtn.style.backgroundColor = '#4CAF50';
-            submitBtn.style.color = '#fff';
+        try {
+            const formData = new FormData(form);
+            formData.append('action', 'submit_inquiry');
+            await fetch('index.php', {
+                method: 'POST',
+                body: formData
+            });
+        } catch (err) {
+            console.warn('Inquiry network notice:', err);
+        }
 
-            setTimeout(() => {
-                const consultationModal = document.getElementById('consultationModal');
-                if (consultationModal) consultationModal.classList.remove('active');
-                form.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.backgroundColor = '';
-                submitBtn.style.color = '';
-                alert('Thank you! Chaudhary Associates principal architects will connect with you within 24 hours.');
-            }, 1200);
-        }, 800);
+        submitBtn.innerHTML = `<span>✓ Consultation Requested!</span>`;
+        submitBtn.style.backgroundColor = '#4CAF50';
+        submitBtn.style.color = '#fff';
+
+        setTimeout(() => {
+            const consultationModal = document.getElementById('consultationModal');
+            if (consultationModal) consultationModal.classList.remove('active');
+            form.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.backgroundColor = '';
+            submitBtn.style.color = '';
+            alert('Thank you! Chaudhary Associates principal architects will connect with you within 24 hours.');
+        }, 1200);
     });
 }
 
